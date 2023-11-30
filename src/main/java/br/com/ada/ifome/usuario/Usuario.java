@@ -10,13 +10,13 @@ import javax.persistence.*;
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     @Column(unique = true, nullable = false)
     private String cpf;
     private String email;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @OneToOne
     private Endereco endereco;
 
 }
