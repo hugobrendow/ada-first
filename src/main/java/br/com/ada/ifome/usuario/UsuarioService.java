@@ -5,6 +5,8 @@ import br.com.ada.ifome.usuario.exceptions.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UsuarioService {
@@ -31,6 +33,10 @@ public class UsuarioService {
         var endereco = enderecoRepository.save(usuario.getEndereco());
         usuario.setEndereco(endereco);
         return usuarioRepository.save(usuario); // Mockar o usuário repository...
+    }
+
+    public List<Usuario> buscarUsuarios() {
+        return this.usuarioRepository.findAll();
     }
 
     public Usuario atualizar(Usuario usuarioRequest) {
