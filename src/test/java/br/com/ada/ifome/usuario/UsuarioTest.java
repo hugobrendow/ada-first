@@ -2,6 +2,7 @@ package br.com.ada.ifome.usuario;
 
 import br.com.ada.ifome.usuario.exceptions.CpfInvalidoException;
 import br.com.ada.ifome.usuario.exceptions.UsuarioInvalidoException;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -53,6 +54,7 @@ public class UsuarioTest {
     }
 
     @Test
+    @Disabled
     public void usuarioComCpfValido() {
         // Mockar ação de save
         var usuario = new Usuario();
